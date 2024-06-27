@@ -1,12 +1,94 @@
 
 
-img {
-    max-width: 50vw;
-    max-height: 25vw;
-    display: block;
-    margin: auto;
+@keyframes rotateScale {
+    0%, 100% {
+        transform: rotate(0deg) scale(0.5);
+    }
+    50% {
+        transform: rotate(360deg) scale(1);
+    }
 }
 
+img {
+    max-width: 30vw;
+    display: block;
+    margin: auto;
+    animation: rotateScale 4s infinite linear;
+}
 
+/* Flashy gradient background */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+body {
+    animation: gradient 8s ease infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+}
 
+/* Spinning animation for the image */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fire-like flickering animation for the title */
+@keyframes flicker {
+    0%, 100% {
+        text-shadow: 2px 2px 10px red, -2px -2px 10px orange;
+    }
+    50% {
+        text-shadow: 2px 2px 20px yellow, -2px -2px 20px red;
+    }
+}
+h1 {
+    animation: flicker 1s linear infinite;
+}
+
+.container {
+    text-align: center; /* Center all content */
+    padding: 50px;
+    margin: 30px;
+    border-radius: 8px; /* Rounded corners */
+}
+
+.contract-address {
+    color: #555; /* Dark gray text color */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for contract address */
+    margin: 20px 0; /* Space above and below */
+}
+
+.dex-button {
+    background-color: #d42a2a; /* Match the button color with the gradient */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dex-button:hover {
+    background-color: #1979a9; /* Darker shade on hover */
+}
 
